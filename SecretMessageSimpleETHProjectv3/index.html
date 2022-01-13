@@ -1,0 +1,20 @@
+<html>
+  <head>
+    <title>My Contract Website</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  </head>
+  <body>
+    <div>
+        <h1>Ethereum Secret Messenger</h1>
+        <hr>
+        <label for="message">This site writes a secret message to the Ethereum
+            blockchain!</label>
+        <input id="userInput" type="text">
+
+        <button id="setMessageButton" onclick="sendMessage()">Set secret message</button>
+    </div>
+
+    <script src="./node_modules/web3/dist/web3.min.js"></script>
+    <script src="bundle.js"></script>
+  </body>
+</html>
