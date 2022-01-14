@@ -1,7 +1,7 @@
 
 // //const Contract = require('web3-eth-contract')
 // import _ from 'lodash';
-// var Web3 = require('web3');
+var Web3 = require('web3');
 // const web3 = new Web3(Web3.givenProvider || "ws://localhost:7545");
 // function component() {
 //     const element = document.createElement('div');
@@ -71,6 +71,10 @@
 // }
 
 // document.body.appendChild(component());
+
+
+
+
 
 
 function sendMessage() {
