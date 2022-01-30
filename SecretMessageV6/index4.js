@@ -24,7 +24,7 @@ web3.eth.getChainId().then((chainId) => console.log("Chain ID: " + chainId));
 
 // Get the contract address
 // Get the contract abi
-var AbiAddress = "0xe43b21E5Dd373468F31A601CC4CC2272F3aa0485";
+var AbiAddress = "0xe43b21E5Dd373468F31A601CC4CC2272F3aa0485"; // address from remix
 var RemixContract = new web3.eth.Contract(
   [
     {
@@ -59,18 +59,10 @@ var RemixContract = new web3.eth.Contract(
   AbiAddress
 );
 
-// $("#setMessageButton").click(function () {
-//   message = $("#userInput").val();
-//   RemixContract.methods
-//     .setMessage($("#userInput").val())
-//     .call()
-//     .then(console.log);
-//   //console.log($("#userInput").val());
-// });
 $("#setMessageButton").click(function () {
   message = $("#userInput").val();
   RemixContract.methods
     .setMessage(message)
-    .send({ from: "0x20C0b92D70831978539f26384bA6A0162fD91680" })
+    .send({ from: "0x20C0b92D70831978539f26384bA6A0162fD91680" }) // address from ganache
     .then(console.log);
 });
