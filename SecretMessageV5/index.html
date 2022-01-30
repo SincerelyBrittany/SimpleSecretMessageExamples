@@ -6,6 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Deploy a Remix Contract</title>
+    <script src="https://unpkg.com/@metamask/legacy-web3@latest/dist/metamask.web3.min.js"></script>
+    <!-- Or: -->
+    <script src="https://unpkg.com/@metamask/legacy-web3@latest/dist/metamask.web3.js"></script>
 
     <link rel="stylesheet" type="text/css" href="main.css">
 
@@ -22,68 +25,23 @@
         <input id="userInput" type="text">
 
         <button id="setMessageButton">Set secret message</button>
+        <button class="enableEthereumButton">Enable Ethereum</button>
+        <!-- <div class="row justify-content-start">
+            <div class="col-lg-3 buttonsBox3">
+              <button id="connectButton" type="submit" class= "catButtons">Enable Ethereum</button>
+              <button id="getAccounts" type="submit" class= "catButtons">Get Accounts</button>
+              <h2>account: <span id="getAccountsResult"> </span></h2>
+              
+              <h2>balance: <span id="showBalance"> </span></h2> -->
+            
+  
+            </div>
+  
+          </div>
     </div>
 
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
-
-    <script>
-
-        // Connect a the web3 provider
-        if (typeof web3 !== 'undefined') {
-            web3 = new Web3(web3.currentProvider);
-        } else {
-            web3 = new Web3(new Web3.providers.HttpProvider("http://localhost:7545"));
-        }
-
-        // Set a default account
-        web3.eth.defaultAccount = web3.eth.accounts[0];
-
-        // Get the contract address
-
-        var RemixContract = new web3.eth.Contract([
-	{
-		"constant": false,
-		"inputs": [
-			{
-				"name": "x",
-				"type": "string"
-			}
-		],
-		"name": "setMessage",
-		"outputs": [],
-		"payable": false,
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"constant": true,
-		"inputs": [],
-		"name": "getMessage",
-		"outputs": [
-			{
-				"name": "",
-				"type": "string"
-			}
-		],
-		"payable": false,
-		"stateMutability": "view",
-		"type": "function"
-	}
-], '0xdfA4E4f83F0b7c006e809F46876E885E839eaCcD');
-//console.log(RemixContract)
-        // var RemixContract = new web3.eth.Contract();
-
-        // Get the contract abi
-        //var myMessage = RemixContract.at('0xdfA4E4f83F0b7c006e809F46876E885E839eaCcD');
-
-        //console.log(myMessage);
-
-        $("#setMessageButton").click(function () {
-            myMessage.setMessage($("#userInput").val());
-            console.log($("#userInput").val())
-        });
-
-    </script>
 </body>
+<script src="./index3.js"></script>
 
 </html>
